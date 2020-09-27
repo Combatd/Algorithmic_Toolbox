@@ -15,7 +15,7 @@ def calc_fib(n):
         f1 = f2
         f2 = original_f1 + f2 # needs to add the previous number
         fibArray.append(f2)
-    print(fibArray)
+    # print(fibArray)
     
     # return the second to number in the list!
     return fibArray[len(fibArray) - 2]
