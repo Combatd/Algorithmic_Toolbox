@@ -2,8 +2,10 @@
 def calc_fib(n):
     if (n <= 1):
         return n
+    elif (n == 2):
+        return 1
 
-    return calc_fib(n - 1) + calc_fib(n - 2)
+    return (n - 1) + (n - 2)
 
 n = int(input())
 print(calc_fib(n))
