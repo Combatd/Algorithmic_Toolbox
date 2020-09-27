@@ -1,9 +1,9 @@
 # Uses python3
 def calc_fib(n):
     if (n <= 1):
-        return [0]
+        return 0
     elif (n == 2):
-        return [0, 1]
+        return 1
     
     f1 = 0
     f2 = 1
