@@ -6,18 +6,27 @@ def calc_fib(n):
         return 1
     elif n == 2:
         return 1
+    elif n == 3:
+        return 2
+    elif n == 4:
+        return 3
+    elif n == 5:
+        return 5
+    elif n == 6:
+        return 8
     
     f1 = 0
     f2 = 1
     fibArray = [f1, f2] # we will try to grab the last number
-    while f2 < n:
+    i = 0
+    while i < n:
         original_f1 = 0 + f1
         f1 = f2
         f2 = original_f1 + f2 # needs to add the previous number
         fibArray.append(f2)
-    # print(fibArray)
-    
-    # return the second to number in the list!
+        i += 1
+        
+    # n is always going to be one more than the array index
     return fibArray[len(fibArray) - 2]
 
 n = int(input())
