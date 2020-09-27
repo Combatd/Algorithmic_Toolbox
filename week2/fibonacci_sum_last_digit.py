@@ -15,6 +15,10 @@ def fibonacci_sum_naive(n):
 
     return sum % 10
 
+def fibonacci_sum_better(n):
+   return None
+
+
 if __name__ == '__main__':
     input = sys.stdin.read()
     n = int(input)
