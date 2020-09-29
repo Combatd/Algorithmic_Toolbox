@@ -69,30 +69,36 @@ def get_change(m):
     penny = 1
     current_value = 0
 
-    while current_value < m
-    
+    while current_value <= m:
         if current_value + dime < m:
             current_value += dime
-            coin += 1
-        elif current_value == m:
+            coins += 1
+        elif current_value + dime == m:
+            current_value += dime
+            coins += 1
             return coins
-        else:
+        elif current_value + dime > m:
             break
 
-    while current_value < m
-    
+    while current_value <= m:
         if current_value + nickel < m:
             current_value += nickel
-            coin += 1
-        elif current_value == m:
+            coins += 1
+        elif current_value + nickel == m:
+            current_value += nickel
+            coins += 1
             return coins
-        else:
+        elif current_value + nickel > m:
             break
 
-    while current_value < m
+    while current_value <= m:
         if current_value + penny < m:
             current_value += penny
-            coin += 1
+            coins += 1
+        elif current_value + penny == m:
+            current_value += penny
+            coins += 1
+            return coins
         else:
             break      
         
