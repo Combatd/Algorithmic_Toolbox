@@ -53,11 +53,15 @@ V2 = 5
 V3 = 1
 
 Complexity Analysis:
-Time = 5 + (n + 3) + (n + 3) + (n + 2)
-     = 3(n + 3) + 5
-     = 3n + 9 + 5
-     = 3n + 14
-     = O(n) Linear Time
+Time = 5 + (nlogn + 3) + (nlogn + 3) + (nlogn + 2)
+     = 3(nlogn + 3) + 5
+     = 3nlogn + 9 + 5
+     = 3nlogn + 14
+     = O(nlogn) Linear-Logarithmic Time...
+
+     There will never be a time where we add nothing but pennies, such
+     as 100 pennies for m of 100, since we start with the 10 cent coin denomination,
+     then switch to 5 and 1 denominations when they can't fit in our m amount.
 
 '''
 
