@@ -20,6 +20,27 @@ repeat n times:
     ** Change the value of the variables! **
     Wi <- Wi - a, A[i] <- A[i] + a, W <- V 
 return (V, A)
+
+Lemma (Complexity Analysis)
+Time Complexity of #get_optimal_value is O(n^2) polynomial
+
+* Selecting the best item on each step is O(n) because of inner looping
+* Main loop will be executed n times
+
+But we can continue optimizing this...
+
+** We can ignore iterations we already checked! **
+for i from 1 to n: 
+    if W = 0:
+        return (V,A)
+    a <- min(Wi, W)
+    V <- V + a(Vi/Wi)
+    Wi <- Wi - a, A[i] <- A[i] + a, W <- V - a
+return (V, A)
+
+* Each iteration is O(1) Constant Time
+* If we sort the items first, that takes O(n)
+* Sort + Knapsack is O(nlogn) Linear Logarithmic time as it is always less than O(n)
 '''
 
 def get_optimal_value(capacity, weights, values):
