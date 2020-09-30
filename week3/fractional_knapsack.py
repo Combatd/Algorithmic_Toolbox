@@ -45,32 +45,33 @@ Array A will be filled with amounts of items starting with values 0
 * Sort + Knapsack is O(nlogn) Linear Logarithmic time as it is always less than O(n)
 '''
 
+# Our strategy involves sorting our items to do an Amount calculation
+def calculate_max_index(weights, values):
+    max_index = 0
+    max_amount = 0 # will track our largeest amount
+
+    for i in range(0, len(weights)):
+        # select i with Wi > 0 and max Vi/Wi
+        if weights[i] != 0 and values[i] / weights[i] > max_amount:
+            max_amount = float(values[i]) / weights[i]
+            max_index = i # change the current max_index
+
+    return max_index
+
 def get_optimal_value(capacity, weights, values):
     value = 0
     # write your code here
 
-    # print(values)
-    # print(weights)
-    # sorted_weights = sorted(weights)
-    # sorted_values = sorted(values)
-        
-    amounts = []
-    idx = 0
-    for item in range(0, len(weights) - 1):
-        amounts.append([values[idx]])
-        idx += 1
+    for i in range(0, len(weights)):
+        # Our "W" is the capacity parameter
+        if capacity == 0:
+            return value
+        index = calculate_max_index(weights, values)
+        a = min(weights[index], capacity) # put amount in our W by our largest weight amount
+        value += a * float(values[index]) / weights[index]
+        weights[index] -= a # We keep subtracting our amount for the specific item!
+        capacity -= a # We need the capacity to hit 0 to be full!
 
-    return amounts
-    
-    W = 0 + capacity
-    i = 0
-    # while i < len(weights) - 1:
-    #     i += 1
-    #     if W == 0:
-    #         return value
-    #     amount = min(values[i]/weights[i]) # round the float
-    #     values += amount
-    #     W = W - amount
 
     return value
 
